@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,12 +15,6 @@ public class TextureRenderer : MonoBehaviour
     private Renderer quadRenderer;
 
     private int byteSize;
-
-    public int red;
-    public int green;
-    public int blue;
-    
-    Star star = new Star();
     
     void Start()
     {
@@ -58,19 +51,6 @@ public class TextureRenderer : MonoBehaviour
            //ColourToTexture(255, 0, 0); //Setting the entire texture to red
            //ColourToTexture(128, 64, 255); //Setting the entire texture to colour 128, 64, 255
         }
-        
-        //Change the colour of the entire texture at runtime
-        //ColourToTexture(red, green, blue);
-        
-        /* More testing
-        ChangePixel(0,0,255,0,0);
-        ChangePixel(3,0,0,255,0);
-        ChangePixel(1,1,0,0,255);
-        */
-        
-        //ChangePixel(Random.Range(0, 24), Random.Range(0, 24), 255, 255, 255);
-
-        //ChangePixel(star.xPos, star.yPos, red, green, blue);      
     }
     
     //Setting the first pixel to red
@@ -82,7 +62,8 @@ public class TextureRenderer : MonoBehaviour
     //Setting the sixth pixel to white
     void WhitePixel()
     {
-        /* Hard coded
+        /*
+        //Hard coded
         backBuffer[15] = 255;
         backBuffer[16] = 255;
         backBuffer[17] = 255;
@@ -101,7 +82,7 @@ public class TextureRenderer : MonoBehaviour
         backBuffer[((xSize * 3 * y) + (x * 3) + 2)] = (byte) B;
     }
 
-    public void ColourToTexture(int R, int G, int B)
+    void ColourToTexture(int R, int G, int B)
     {
         for (int i = 0; i < byteSize / 3; i++)
         {
