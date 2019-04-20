@@ -20,8 +20,8 @@ public class TextureRenderer : MonoBehaviour
     public int red;
     public int green;
     public int blue;
-    
-    Star star = new Star();
+
+    private Star star;
     
     void Start()
     {
@@ -69,8 +69,6 @@ public class TextureRenderer : MonoBehaviour
         */
         
         //ChangePixel(Random.Range(0, 24), Random.Range(0, 24), 255, 255, 255);
-
-        //ChangePixel(star.xPos, star.yPos, red, green, blue);      
     }
     
     //Setting the first pixel to red
